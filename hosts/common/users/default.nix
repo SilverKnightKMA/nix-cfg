@@ -1,0 +1,3 @@
+{
+    import = [./tungvt.nix];
+}
