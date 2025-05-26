@@ -1,3 +1,3 @@
 {
-    import = [./tungvt.nix];
+    imports = [./tungvt.nix];
 }
