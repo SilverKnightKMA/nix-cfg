@@ -1,7 +1,7 @@
 # Common configuration for all hosts
 
 { lib, inputs, outputs, ... }: {
-  import = [
+  imports = [
     ./users
     inputs.home-manager.nixosModules.home-manager
   ];
