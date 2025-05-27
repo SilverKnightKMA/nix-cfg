@@ -2,6 +2,7 @@
   imports = [
     ../common
     ../features/cli
+    ./dotfiles
     ../features/desktop
     ./home.nix
   ];
@@ -13,6 +14,7 @@
       neofetch.enable = true;
     };
     desktop = {
+      fonts.enable = true;
       hyprland.enable = true;
       wayland.enable = true;
     };
