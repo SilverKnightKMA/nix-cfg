@@ -82,6 +82,8 @@
     xwayland.enable = true;
   };
 
+  programs.fish.enable = true;
+  
   #programs.ssh.startAgent = true;
 
   # Open ports in the firewall.
