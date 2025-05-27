@@ -7,7 +7,7 @@
 
   features = {
     cli = {
-      fish.enable = false;
+      fish.enable = true;
     };
   };
 }
