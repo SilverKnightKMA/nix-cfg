@@ -21,11 +21,10 @@
   wayland.windowManager.hyprland = {
     settings = {
       device = [
-        #{
-        #  name = "keyboard";
-        #  kb_layout = "us";
-        #  kb_variant = qwerty;
-        #}
+        {
+          name = "keyboard";
+          kb_layout = "us";
+        }
         {
           name = "mouse";
           sensitivity = -0.5;
