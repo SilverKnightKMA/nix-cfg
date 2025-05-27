@@ -24,6 +24,7 @@
         {
           name = "keyboard";
           kb_layout = "us";
+          kb_variant = qwerty;
         }
         {
           name = "mouse";
