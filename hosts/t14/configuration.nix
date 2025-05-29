@@ -58,6 +58,7 @@
     #  wget
     neovim
     git
+    gh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
