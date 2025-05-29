@@ -1,0 +1,14 @@
+name: "Flake.lock: Check Nix dependencies"
+
+on:
+  workflow_dispatch: # allows manual triggering
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Nix flake Nixpkgs inputs
+        uses: DeterminateSystems/flake-checker-action@main
