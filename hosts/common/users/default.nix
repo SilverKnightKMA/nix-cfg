@@ -1,4 +1,6 @@
 {
-    imports = [./tungvt.nix];
-    imports = [./sudo.nix];
+  imports = [
+    ./tungvt.nix
+    ./sudo.nix
+  ];
 }
