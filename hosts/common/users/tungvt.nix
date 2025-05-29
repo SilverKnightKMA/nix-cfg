@@ -5,7 +5,7 @@
   ...
 }: {
   users.users.tungvt = {
-    initialHashedPassword = "$y$j9T$vr/a36U9Nk/PCpeKC.Mq7.$RK/ar/HsGLPdq/biIZ1WtW2qNVlmpfuZ2mXHXW2G33C";
+    initialHashedPassword = "$6$tTsi3F/A792zPhKc$1c3EQ8gMCKjJa8xOXMfzP/FPBUVJ7kgmr0ML.QOiL6JYpCv..Pi7/VhgnPerJv1fqXefXXuLwG9lvhXgX/XeO1";
     isNormalUser = true;
     description = "tungvt";
     extraGroups = [
