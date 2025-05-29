@@ -13,7 +13,8 @@
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "/dev/nvme0n1" ];
+  #boot.loader.grub.devices = [ "/dev/nvme0n1" ];
+  boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
