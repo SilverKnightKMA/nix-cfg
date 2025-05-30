@@ -56,7 +56,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ 
             ./home/tungvt/t14.nix
-            inputs.disko.nixosModules.disko
+            disko.nixosModules.disko
           ];
         };
       };
