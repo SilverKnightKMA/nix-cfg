@@ -13,6 +13,6 @@ fi
 
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko ./hosts/"$hostname"/disko-config.nix
 
-sudo mount -o remount,size=10G,noatime /nix/.rw-store
+#sudo mount -o remount,size=10G,noatime /nix/.rw-store
 
 sudo nixos-install --flake ".#$hostname"
