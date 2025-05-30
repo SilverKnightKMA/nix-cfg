@@ -11,6 +11,10 @@ else
   hostname="${hostname:-$default_hostname}"
 fi
 
+git clone https://github.com/SilverKnightKMA/nix-cfg
+
+cd nix-cfg
+
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko ./hosts/"$hostname"/disko-config.nix
 
 sudo mount -o remount,size=10G,noatime /nix/.rw-store
