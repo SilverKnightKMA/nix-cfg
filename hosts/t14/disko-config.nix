@@ -10,25 +10,24 @@
             ESP = {
               size = "512M";
               type = "EF00";
-              partlabel = "ESP";
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
+                extraArgs = "-nESP";
               };
             };
             root = {
               size = "100%";
-              partlabel = "root";
               content = {
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+                extraArgs = "-Lnixos-root";
               };
             };
             swap = {
-              size = "16G"; # hoặc dung lượng RAM thực tế
-              partlabel = "swap";
+              size = "16G";
               content = {
                 type = "swap";
               };
