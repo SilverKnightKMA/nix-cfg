@@ -8,7 +8,13 @@
       content = {
         type = "gpt"; # Initialize the disk with a GPT partition table
         partitions = {
+          boot = {
+            name = "boot";
+            size = "1M";
+            type = "EF02";
+          };
           ESP = { # Setup the EFI System Partition
+            name = "ESP";
             type = "EF00"; # Set the partition type
             size = "1000M"; # Make the partition a gig
             content = {
@@ -18,6 +24,7 @@
             };
           };
           primary = { # Setup the LVM partition
+            name = "primary";
             size = "100%"; # Fill up the rest of the drive with it
             content = {
               type = "lvm_pv"; # pvcreate
