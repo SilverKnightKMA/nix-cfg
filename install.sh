@@ -19,4 +19,4 @@ sudo nix --experimental-features "nix-command flakes" run github:nix-community/d
 
 sudo mount -o remount,size=10G,noatime /nix/.rw-store
 
-sudo nixos-rebuild switch --flake ".#$hostname"
+sudo nixos-install --flake ".#$hostname"
