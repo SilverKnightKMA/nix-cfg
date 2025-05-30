@@ -47,7 +47,10 @@
       nixosConfigurations = {
         t14 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/t14 ];
+          modules = [ 
+            ./hosts/t14
+            imports.disko.nixosModules.disko
+          ];
         };
       };
       homeConfigurations = {
@@ -56,7 +59,6 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ 
             ./home/tungvt/t14.nix
-            disko.nixosModules.disko
           ];
         };
       };
