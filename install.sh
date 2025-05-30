@@ -17,4 +17,6 @@ cd nix-cfg
 
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko ./hosts/"$hostname"/disko-config.nix
 
+sudo mount -o remount,size=10G,noatime /nix/.rw-store
+
 sudo nixos-rebuild switch --flake ".#$hostname"
