@@ -1,19 +1,16 @@
 {
   disko.devices = {
     disk = {
-      nixos = {
+      main = {
         type = "disk";
         device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
-            boot = {
-              size = "1M";
-              type = "EF02"; # for grub MBR
-            };
             ESP = {
               size = "512M";
               type = "EF00";
+              partlabel = "ESP";
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -22,10 +19,18 @@
             };
             root = {
               size = "100%";
+              partlabel = "root";
               content = {
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+              };
+            };
+            swap = {
+              size = "16G"; # hoặc dung lượng RAM thực tế
+              partlabel = "swap";
+              content = {
+                type = "swap";
               };
             };
           };
