@@ -16,3 +16,5 @@ git clone https://github.com/SilverKnightKMA/nix-cfg
 cd nix-cfg
 
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko ./hosts/"$hostname"/disko-config.nix
+
+sudo nixos-rebuild switch --flake ".#$hostname"
