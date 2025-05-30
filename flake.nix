@@ -49,7 +49,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ 
             ./hosts/t14
-            imports.disko.nixosModules.disko
+            inputs.disko.nixosModules.disko
           ];
         };
       };
