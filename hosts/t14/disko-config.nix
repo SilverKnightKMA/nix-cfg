@@ -1,5 +1,7 @@
 # https://jefftp.com/nixos-disko/
 
+{ }:
+
 {
   disko.devices = {
     disk.sda = {
