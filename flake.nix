@@ -18,13 +18,18 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     dotfiles = {
       url = "github:SilverKnightKMA/dotfiles-flake";
       flake = false;
     };
   };
 
-  outputs = { self, home-manager, dotfiles, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, dotfiles, disko, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
       systems = [
@@ -49,7 +54,10 @@
         "tungvt@t14" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/tungvt/t14.nix ];
+          modules = [ 
+            ./home/tungvt/t14.nix
+            input.disko.nixosModules.disko
+          ];
         };
       };
     };
