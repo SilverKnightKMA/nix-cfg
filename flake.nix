@@ -19,7 +19,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
-    inputs.nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
     disko = {
       url = "github:nix-community/disko";
