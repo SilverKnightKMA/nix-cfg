@@ -15,8 +15,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+
+    inputs.nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
     disko = {
       url = "github:nix-community/disko";
@@ -29,7 +32,7 @@
     };
   };
 
-  outputs = { self, home-manager, dotfiles, disko, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, dotfiles, disko, nixos-facter-modules, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
       systems = [
