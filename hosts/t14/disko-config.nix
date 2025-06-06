@@ -4,7 +4,7 @@
   disko.devices = {
     disk.sda = {
       type = "disk";
-      device = "/dev/sda";
+      device = "/dev/nvme0n1";
       content = {
         type = "gpt"; # Initialize the disk with a GPT partition table
         partitions = {
