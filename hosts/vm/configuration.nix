@@ -19,7 +19,7 @@
     efiInstallAsRemovable = true;
   };
 
-  networking.hostName = "t14"; # Define your hostname.
+  networking.hostName = "vm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -45,12 +45,6 @@
     LC_PAPER = "vi_VN";
     LC_TELEPHONE = "vi_VN";
     LC_TIME = "vi_VN";
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
   };
 
   # Allow unfree packages
@@ -83,40 +77,7 @@
     settings.PermitRootLogin = "no";
     allowSFTP = true;
   };
-  
   services.tailscale.enable = true;
-  # create a oneshot job to authenticate to Tailscale
-  systemd.services.tailscale-autoconnect = {
-    description = "Automatic connection to Tailscale";
-
-    # make sure tailscale is running before trying to connect to tailscale
-    after = [ "network-pre.target" "tailscale.service" ];
-    wants = [ "network-pre.target" "tailscale.service" ];
-    wantedBy = [ "multi-user.target" ];
-
-    # set this service as a oneshot job
-    serviceConfig.Type = "oneshot";
-
-    # have the job run this shell script
-    script = with pkgs; ''
-      # wait for tailscaled to settle
-      sleep 2
-
-      # check if we are already authenticated to tailscale
-      status="$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)"
-      if [ $status = "Running" ]; then # if so, then do nothing
-        exit 0
-      fi
-
-      # otherwise authenticate with tailscale
-      ${tailscale}/bin/tailscale up -authkey tskey-examplekeyhere
-    '';
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   programs.fish.enable = true;
   

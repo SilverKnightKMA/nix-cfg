@@ -55,6 +55,13 @@
             inputs.disko.nixosModules.disko
           ];
         };
+        vm = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ 
+            ./hosts/vm
+            inputs.disko.nixosModules.disko
+          ];
+        };
       };
       homeConfigurations = {
         "tungvt@t14" = home-manager.lib.homeManagerConfiguration {
