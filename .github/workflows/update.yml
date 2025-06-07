@@ -21,6 +21,7 @@ jobs:
       - name: Update Nix flake inputs
         uses: DeterminateSystems/update-flake-lock@main
         with:
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
           pr-title: "Update Nix flake inputs" # Title of PR to be created
           pr-labels: |                  # Labels to be set on the PR
             dependencies
