@@ -18,6 +18,7 @@ on:
 
 jobs:
   automerge:
+    if: github.event.pull_request.user.login = 'SilverKnightKMA'
     runs-on: ubuntu-latest
     steps:
       - name: automerge
