@@ -2,9 +2,11 @@ name: "Flake.lock: Check Nix dependencies"
 
 on:
   workflow_dispatch: # allows manual triggering
-  push:
-    branches: [main]
-  pull_request:
+  #push:
+  #  branches: [main]
+  #pull_request:
+  schedule:
+    - cron: '0 0 * * *' # runs daily at 00:00
 
 jobs:
   nix-flake-checks:
