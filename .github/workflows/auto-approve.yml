@@ -1,13 +1,10 @@
-name: Automatic pull request review
-on: [pull_request]
+name: Auto approve
+on: pull_request_target
+
 jobs:
-  automate-pullrequest-review:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - name: Approve pull request
-        if: github.actor == 'github-actions[bot]'
-        uses: andrewmusgrave/automatic-pull-request-review@0.0.5
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          event: APPROVE
-          body: 'Thank you 🎊'
+      - uses: hmarr/auto-approve-action@v4
