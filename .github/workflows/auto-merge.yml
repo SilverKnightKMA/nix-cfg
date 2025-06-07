@@ -1,4 +1,4 @@
-name: Auto Merge
+name: Auto Merge Flake Update PR
 
 on:
   pull_request:
