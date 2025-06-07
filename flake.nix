@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { self, home-manager, dotfiles, disko, nixos-facter-modules, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, disko, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
       systems = [
