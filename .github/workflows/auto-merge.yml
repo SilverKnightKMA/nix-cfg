@@ -1,16 +1,6 @@
 name: Auto Merge Flake Update PR
 
 on:
-  pull_request:
-    types:
-      - labeled
-      - unlabeled
-      - synchronize
-      - opened
-      - edited
-      - ready_for_review
-      - reopened
-      - unlocked
   check_suite:
     types:
       - completed
