@@ -12,6 +12,9 @@ on:
       - ready_for_review
       - reopened
       - unlocked
+  pull_request_review:
+    types:
+      - submitted
   check_suite:
     types:
       - completed
@@ -25,5 +28,5 @@ jobs:
         uses: "pascalgn/automerge-action@v0.16.2"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          #MERGE_METHOD: "merge"
+          MERGE_METHOD: "merge"
           MERGE_LABELS: "automated"
