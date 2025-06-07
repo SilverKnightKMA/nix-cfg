@@ -3,7 +3,7 @@ name: "Flake.lock: Update Nix dependencies"
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: '0 0 * * 0' # runs weekly on Sunday at 00:00
+    - cron: '0 0 * * 6' # runs weekly on Sat at 00:00
 
 jobs:
   nix-flake-update:
@@ -25,6 +25,6 @@ jobs:
           pr-labels: |                  # Labels to be set on the PR
             dependencies
             automated
-          #pr-assignees: "SilverKnightKMA"
-          #pr-reviewers: "SilverKnightKMA"
+          pr-assignees: "SilverKnightKMA"
+          pr-reviewers: "SilverKnightKMA"
           nix-options: "--accept-flake-config"
