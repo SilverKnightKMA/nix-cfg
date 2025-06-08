@@ -1,9 +1,9 @@
 name: Auto Merge Flake Update PR
 
 on:
-  check_suite:
-    types:
-      - completed
+  #check_suite:
+  #  types:
+  #    - completed
   pull_request_review:
     types:
       - submitted
