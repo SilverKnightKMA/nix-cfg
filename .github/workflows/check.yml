@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '0 0 * * *' # runs daily at 00:00
 
+permissions:
+  contents: read
+
 jobs:
   nix-flake-checks:
     runs-on: ubuntu-latest
