@@ -2,6 +2,9 @@
 
 # https://github.com/sandhose/nixconf/blob/055de30/.github/workflows/update.yaml
 name: Update
+permissions:
+  contents: write
+  pull-requests: write
 on:
   # Manual triggering
   workflow_dispatch:
