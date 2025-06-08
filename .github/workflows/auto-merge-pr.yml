@@ -1,4 +1,4 @@
-name: Auto Merge Flake Update PR
+name: Auto Merge Reviewed PR
 
 on:
   #check_suite:
