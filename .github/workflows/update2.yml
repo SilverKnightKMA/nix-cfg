@@ -42,12 +42,12 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }} # needed so that this triggers further flows. not ideal.
+          #token: ${{ secrets.GH_TOKEN_FOR_UPDATES }} # needed so that this triggers further flows. not ideal.
           title: "chore(flake): update flake.lock"
           body: "${{ steps.commit.outputs.message }}"
           branch: automated/flake-updates
           delete-branch: true
-          #reviewers: "SilverKnightKMA"
+          reviewers: "SilverKnightKMA"
           assignees: "SilverKnightKMA"
           labels: |
             automated
