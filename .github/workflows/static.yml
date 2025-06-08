@@ -5,6 +5,8 @@ on:
     - cron: '0 0 * * *' # runs daily at 00:00
 
 name: Code analysis
+permissions:
+  contents: read
 
 jobs:
   deadnix:
