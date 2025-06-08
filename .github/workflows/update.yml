@@ -1,7 +1,7 @@
 # https://github.com/EdenEast/nyx/blob/main/.github/workflows/update.yml
 
 # https://github.com/sandhose/nixconf/blob/055de30/.github/workflows/update.yaml
-name: Update
+name: "Flake.lock: Update Nix dependencies"
 permissions:
   contents: write
   pull-requests: write
