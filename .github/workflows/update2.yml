@@ -47,7 +47,7 @@ jobs:
           body: "${{ steps.commit.outputs.message }}"
           branch: automated/flake-updates
           delete-branch: true
-          reviewers: "SilverKnightKMA"
+          #reviewers: "SilverKnightKMA"
           assignees: "SilverKnightKMA"
           labels: |
             automated
