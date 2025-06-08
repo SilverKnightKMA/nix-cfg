@@ -1,4 +1,4 @@
-name: Auto Merge Reviewed PR
+name: Auto Merge Approved PR
 
 on:
   pull_request_review:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   automerge:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
       - name: automerge
