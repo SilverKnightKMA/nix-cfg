@@ -1,6 +1,7 @@
 name: "Flake.lock: Check Nix dependencies"
 
 on:
+  push:
   workflow_dispatch: # allows manual triggering
   pull_request:
   schedule:
