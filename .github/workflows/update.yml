@@ -27,5 +27,5 @@ jobs:
             dependencies
             automated
           pr-assignees: "SilverKnightKMA"
-          pr-reviewers: "SilverKnightKMA"
+          #pr-reviewers: "SilverKnightKMA"
           nix-options: "--accept-flake-config"
