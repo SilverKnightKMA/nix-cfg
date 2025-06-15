@@ -80,7 +80,7 @@
     };
     tailscale.enable = true;
     qemuGuest.enable = true;
-  }
+  };
 
   programs.fish.enable = true;
 
