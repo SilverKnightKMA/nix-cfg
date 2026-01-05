@@ -21,3 +21,9 @@ jobs:
         with:
           name: deadnix
       - uses: astro/deadnix-action@main
+      - name: Add label to Deadnix PR
+              if: success()
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                gh pr edit deadnix --add-label "automated" || echo "No PR found to label"
