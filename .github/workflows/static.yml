@@ -1,11 +1,12 @@
+name: Deadnix Code Analysis
+
 on:
   push:
   pull_request:
-  workflow_dispatch: 
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *' # runs daily at 00:00
 
-name: Deadnix Code Analysis
 permissions:
   contents: write
   pull-requests: write
@@ -21,9 +22,10 @@ jobs:
         with:
           name: deadnix
       - uses: astro/deadnix-action@main
+      
       - name: Add label to Deadnix PR
-              if: success()
-              env:
-                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: |
-                gh pr edit deadnix --add-label "automated" || echo "No PR found to label"
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr edit deadnix --add-label "automated" || echo "No PR found to label"
