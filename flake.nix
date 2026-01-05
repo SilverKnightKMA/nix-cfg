@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { self, home-manager, disko, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
       systems = [
